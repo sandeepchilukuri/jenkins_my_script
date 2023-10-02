@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myscript-deployment
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: myscript
+  template:
+    metadata:
+      labels:
+        app: myscript
+    spec:
+      containers:
+      - name: myscript-container
+        image: myscript-image
+
